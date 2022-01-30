@@ -112,10 +112,12 @@ def main():
 
 	# study the coherence of this operation
 	adjusted_rasters = findAllRasters("adjusted_resolution_rasters")
-	print(adjusted_rasters)
 	print(getResolutionsDataFrame("adjusted_resolution_rasters", adjusted_rasters))
+	
 	# Save the dataframe as a CSV file to access the length of pixels later, more easily
-	getResolutionsDataFrame("adjusted_resolution_rasters", adjusted_rasters).to_csv("rasters_unified_resolutions.csv")
+	if not os.path.isdir("parameters"):
+		os.mkdir("parameters")
+	getResolutionsDataFrame("adjusted_resolution_rasters", adjusted_rasters).to_csv("parameters/rasters_unified_resolutions.csv")
 
 	finish = perf_counter()
 	time_delta = finish - start
