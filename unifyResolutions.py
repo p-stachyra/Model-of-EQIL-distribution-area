@@ -90,7 +90,7 @@ def changeResolution(min_resolution, rasters_directory, raster):
 	
 	return exitcode
 
-def main():
+def unifyResolutions():
 
 	start = perf_counter()
 
@@ -121,9 +121,9 @@ def main():
 
 	finish = perf_counter()
 	time_delta = finish - start
-	print("\nProgram finished. Total execution time: %f seconds" % time_delta)
+	print("\nProgram unifyResolution finished. Total execution time: %f seconds" % time_delta)
 
 	return 0
 
 if __name__ == "__main__":
-	main()
+	unifyResolutions()
