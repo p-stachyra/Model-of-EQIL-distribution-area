@@ -15,7 +15,6 @@ def translateToMap(input_name, output_name, datatype):
 
 
 def translateAllRasters(rasters_directory):
-	rasters_to_translate = []
 	for raster in os.listdir(rasters_directory):
 		name = raster.split(".")[0]
 		new_name = f"{name}.map"

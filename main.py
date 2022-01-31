@@ -4,18 +4,6 @@
 # Marius Lupulescu
 # Piotr Stachyra 
 
-# global modules
-import numba as nb
-import numpy as np
-import os
-import pandas as pd
-import sys
-
-from osgeo import gdal
-from time import perf_counter
-from pcraster import *
-
-# local imports
 from unifyResolutions import *
 from cropRasterPGA import *
 from translateToMap import *

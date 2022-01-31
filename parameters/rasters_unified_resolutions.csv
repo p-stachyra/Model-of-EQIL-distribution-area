@@ -2,4 +2,5 @@
 0,0.00208,0.00208,dem.tif
 1,0.00208,0.00208,pga_contour_raster.tif
 2,0.00208,0.00208,pga_contour_raster_cropped.tif
-3,0.00208,0.00208,TWI_raster.tif
+3,0.00208,0.00208,profile_curvature.tif
+4,0.00208,0.00208,TWI_raster.tif
