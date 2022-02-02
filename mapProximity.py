@@ -39,5 +39,3 @@ def create_proximity_map(source_path='data/rupture_point_raster.tif', output_pat
     dstband = None
     src_ds = None
     dst_ds = None
-
-create_proximity_map()
