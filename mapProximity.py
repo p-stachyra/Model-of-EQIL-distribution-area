@@ -1,17 +1,18 @@
 from osgeo import gdal
 import math
 
-def calculate_radius(magnitude, in_pixels=True, pixel_res=208.34):
+def calculate_radius(magnitude, in_pixels=True, pixel_res=208.34, return_A_d=False):
     """
     Calculate the area radius based on Keefer, D. K. (2002)
     The original formula: Log_10(A_d) = magnitude - 3.46, where A_d is the hazard area estimation in km2
     Each pixel size is equal to approximately 208.34 meters, as all of the layers' resolutions are
     normalized to DEM map resolution
+    If in_pixels = False - the area will be computed in km2, and radius in km
     """
     if in_pixels: A_d = 10**(-173/50 + magnitude)*10**3/pixel_res
-    else: A_d = 10**(-173/50 + magnitude)*10**3
-    print(A_d)
-    return math.sqrt(A_d/math.pi)
+    else: A_d = 10**(-173/50 + magnitude)
+    if return_A_d: return (A_d, math.sqrt(A_d/math.pi))
+    else: return math.sqrt(A_d/math.pi)
 
 def create_proximity_map(source_path='data/rupture_point_raster.tif', output_path='data/EQIL_area.tif', magnitude=5.3):
     """
