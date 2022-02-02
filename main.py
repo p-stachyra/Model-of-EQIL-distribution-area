@@ -12,6 +12,7 @@ from cropToDEM import *
 from translateToMap import *
 from extractZone import *
 from morphologicalStatistics import *
+from plotMorphology import *
 
 
 def main():
@@ -71,11 +72,9 @@ def main():
 	# of inputs for the mLS parameter
 	morphologicalStatistics(["PGA_zone", "ground_failure_zone", "EQIL_distribution_area", "binary_maps"], "area_morphology")
 
-	###################
-	## TODO ###########
-	## Visualizations #
-	###################
 	# This section produces visualizations which are saved to visualizations directory
+	folder_area = "area_morphology"
+	visualize_csv(folder_area)
 
 	# check how the program performed (in terms of its execution time)
 	finish = perf_counter()
@@ -83,6 +82,7 @@ def main():
 	print("\nProgram finished. Total execution time: %f seconds" % time_delta)
 
 	return 0
+
 
 if __name__ == "__main__":
 	main()

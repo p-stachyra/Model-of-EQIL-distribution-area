@@ -11,6 +11,11 @@ from pcraster import *
 # local modules imports
 from statisticalFunctions import *
 
+# for visualisation
+import seaborn as sns
+from PIL import Image 
+import PIL 
+
 def prepareData(binary_map_path):
 	"""A function which loads binary rasters, translates them into multidimensional arrays,
 	 flattens them and removes missing values
@@ -89,6 +94,5 @@ def morphologicalStatistics(directories_to_crawl, directory_flatten_rasters):
 	# create a dataframe for descriptive statistics and export it into CSV file format
 	descriptive_statistics_df = pd.DataFrame(descriptive_statistics)
 	descriptive_statistics_df.to_csv("parameters/area_terrain_statistics.csv")
-
 
 	return 0
