@@ -12,6 +12,9 @@ from pcraster import *
 from statisticalFunctions import *
 
 def prepareData(binary_map_path):
+	"""A function which loads binary rasters, translates them into multidimensional arrays,
+	 flattens them and removes missing values
+	 Returns a pre-processed data structure."""
 	map_data = readmap(binary_map_path)
 	# convert to array format
 	data_array = numpy_operations.pcr2numpy(map_data, np.nan)
@@ -19,8 +22,12 @@ def prepareData(binary_map_path):
 	return data_array[~np.isnan(data_array)]
 
 def morphologicalStatistics(directories_to_crawl, directory_flatten_rasters):
-	# measure performance of the program
-	start = perf_counter()
+	"""This function allows to compute descriptive statistics for the terrain of interest.
+	Seperate CSV files are created for the values for each variable - such as TWI, profile curvature, etc
+	And a single CSV file containing the descriptive statistics output is created.
+	The function expects the directory in which all the files for computing statistical measures are located
+	and a directory to which the separate CSV files for each phenomenon measures are going to be saved."""
+
 	# create a directory for storing the flattened rasters
 	if not os.path.isdir(directory_flatten_rasters):
 		os.mkdir(directory_flatten_rasters)
@@ -83,9 +90,5 @@ def morphologicalStatistics(directories_to_crawl, directory_flatten_rasters):
 	descriptive_statistics_df = pd.DataFrame(descriptive_statistics)
 	descriptive_statistics_df.to_csv("parameters/area_terrain_statistics.csv")
 
-	# check how the program performed (in terms of the execution time)
-	finish = perf_counter()
-	time_delta = finish - start
-	print("\nProgram finished. Total execution time: %f seconds" % time_delta)
 
 	return 0
