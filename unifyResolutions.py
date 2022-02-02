@@ -100,9 +100,7 @@ def unifyResolutions():
 	
 	# Determine the smallest resolution which will be set as the default resolution for all rasters
 	smallest_resolutions = resolutions_df[["pixel_x", "pixel_y"]].min()
-	#################################
-	# TODO: resolution inconsistency #
-	#################################
+
 	smallest_size = round(smallest_resolutions.tolist()[0], 5)
 
 	# change rasters' resolution to adjust them to the smallest one
@@ -124,6 +122,3 @@ def unifyResolutions():
 	print("\nProgram unifyResolution finished. Total execution time: %f seconds" % time_delta)
 
 	return 0
-
-if __name__ == "__main__":
-	unifyResolutions()

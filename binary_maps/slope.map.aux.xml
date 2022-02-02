@@ -1,0 +1,22 @@
+<PAMDataset>
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="TIFFTAG_SOFTWARE">GRASS GIS 7.8.6 with GDAL 3.3.1</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>slope</Description>
+    <NoDataValue le_hex_equiv="000000000000F87F">nan</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <Metadata>
+      <MDI key="COLOR_TABLE_RULES_COUNT">7</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_0">0.000000e+00 2.000000e+00 255 255 255 255 255 0</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_1">2.000000e+00 5.000000e+00 255 255 0 0 255 0</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_2">5.000000e+00 1.000000e+01 0 255 0 0 255 255</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_3">1.000000e+01 1.500000e+01 0 255 255 0 0 255</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_4">1.500000e+01 3.000000e+01 0 0 255 255 0 255</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_5">3.000000e+01 5.000000e+01 255 0 255 255 0 0</MDI>
+      <MDI key="COLOR_TABLE_RULE_RGB_6">5.000000e+01 9.000000e+01 255 0 0 0 0 0</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

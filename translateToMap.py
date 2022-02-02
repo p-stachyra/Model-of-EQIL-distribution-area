@@ -14,11 +14,12 @@ def translateToMap(input_name, output_name, datatype):
 	return 0
 
 
-def translateAllRasters(rasters_directory):
+def translateAllRasters(rasters_directory, rasters_to_skip):
 	for raster in os.listdir(rasters_directory):
-		name = raster.split(".")[0]
-		new_name = f"{name}.map"
-		translateToMap(raster, new_name, "Float64")
+		if raster in rasters_to_skip:
+			continue
+		else:
+			name = raster.split(".")[0]
+			new_name = f"{name}.map"
+			translateToMap(raster, new_name, "Float64")
 
-if __name__ == "__main__":
-	translateAllRasters("adjusted_resolution_rasters")

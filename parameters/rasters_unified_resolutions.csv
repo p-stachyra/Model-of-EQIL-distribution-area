@@ -1,6 +1,12 @@
 ,pixel_x,pixel_y,file_name
 0,0.00208,0.00208,dem.tif
-1,0.00208,0.00208,pga_contour_raster.tif
-2,0.00208,0.00208,pga_contour_raster_cropped.tif
-3,0.00208,0.00208,profile_curvature.tif
-4,0.00208,0.00208,TWI_raster.tif
+1,0.00208,0.00208,distance_stream_downstream.tif
+2,0.00208,0.00208,ground_failure_estimate.tif
+3,0.00208,0.00208,ground_failure_estimate_cropped.tif
+4,0.00208,0.00208,local_relief.tif
+5,0.00208,0.00208,pga_contour_raster.tif
+6,0.00208,0.00208,pga_contour_raster_cropped.tif
+7,0.00208,0.00208,profile_curvature.tif
+8,0.00208,0.00208,slope.tif
+9,0.00208,0.00208,TWI_raster.tif
+10,0.00208,0.00208,vector_ruggedness_measure.tif
