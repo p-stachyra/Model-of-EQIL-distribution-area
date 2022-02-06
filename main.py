@@ -1,8 +1,4 @@
-# Project created by
-# Jan Androsiuk
-# Jaimy Lai
-# Marius Lupulescu
-# Piotr Stachyra 
+# Program's main procedure
 
 import numpy as np
 
@@ -12,6 +8,7 @@ from cropToDEM import *
 from translateToMap import *
 from extractZone import *
 from morphologicalStatistics import *
+from mapProximity import *
 from plotMorphology import *
 
 
@@ -22,6 +19,11 @@ def main():
 
 	# Program's driver
 	# This routine manages the modules' procedures.
+
+	# This section computes and visualizes earthquake-induced landslide distribution area
+	# The inputs are : TIF raster with the earthquake's epicenter point assigned and earthquake's magnitude
+	# The output is directed to visualizations folder
+	create_proximity_map(source_path='data/rupture_point_raster.tif', output_path='data/EQIL_area.tif', magnitude=5.3)
 
 	# make the resolution of the rasters smallest as possible. 
 	# This leads to unifying the rasters resolution to the

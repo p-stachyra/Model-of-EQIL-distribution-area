@@ -11,11 +11,6 @@ from pcraster import *
 # local modules imports
 from statisticalFunctions import *
 
-# for visualisation
-import seaborn as sns
-from PIL import Image 
-import PIL 
-
 def prepareData(binary_map_path):
 	"""A function which loads binary rasters, translates them into multidimensional arrays,
 	 flattens them and removes missing values
@@ -65,7 +60,7 @@ def morphologicalStatistics(directories_to_crawl, directory_flatten_rasters):
 				# save the array to CSV
 				flattened_raster_df = pd.DataFrame(flattened_raster)
 				flattened_raster_df.columns = [f"{phenomenon_name}"]
-				flattened_raster_df.to_csv(f"{directory_flatten_rasters}/{directory}_{phenomenon_name}.csv")
+				flattened_raster_df.to_csv(f"{directory_flatten_rasters}/{directory}__{phenomenon_name}.csv")
 
 				# descriptive statistics
 				# extract mean, standard deviation, variance, minimal value, maximal value, median
