@@ -51,7 +51,9 @@ def morphologicalStatistics(directories_to_crawl, directory_flatten_rasters):
 		for raster in os.listdir(directory):
 			phenomenon_statistics = []
 			# select only PCRaster .map files
-			if raster[-3:] == "map":
+			if (raster[-3:] != "map") | (raster in ["EQIL_area.map","ground_failure_estimate_cropped.map"]):
+				continue
+			else:
 				# extract the terrain variable from the raster name
 				phenomenon_name = raster[:-4]
 				# extrat the values from the raster in a 1-D array
@@ -88,6 +90,8 @@ def morphologicalStatistics(directories_to_crawl, directory_flatten_rasters):
 			descriptive_statistics.append(phenomenon_statistics)
 	# create a dataframe for descriptive statistics and export it into CSV file format
 	descriptive_statistics_df = pd.DataFrame(descriptive_statistics)
+	descriptive_statistics_df.columns = descriptive_statistics_df.iloc[0]
+	descriptive_statistics_df.drop(descriptive_statistics_df.index[0], inplace=True)
 	descriptive_statistics_df.to_csv("parameters/area_terrain_statistics.csv")
 
 	return 0
